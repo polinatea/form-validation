@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-image: radial-gradient(circle at 50% 50%, #ffffff 0, #fffbff 10%, #fff1fe 20%, #ffe6f9 30%, #fedaf5 40%, #f2cdf2 50%, #e4c1f0 60%, #d3b8ef 70%, #c1b0ef 80%, #adaaef 90%, #97a6ef 100%);    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    /* background-color: white; */
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 400px;
+    max-width: 100%;
+}
+
+.header{
+
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.form{
+    padding: 20px 30px;
+}
+
+.form-control{
+    /* display: flex;
+    align-items: center; */
+    padding-bottom: 20px; /* spot for the error message */
+    margin-bottom: 10px;
+    position: relative; /* because we gonna have absolution positioning inside of this element */
+
+}
+
+.form-control label{
+    display: inline-block; /* to apply margin-bottom*/
+    margin-bottom: 5px;
+}
+
+.form-control input{
+    border: 2px solid black;
+    border-radius: 3px;
+    display: block; /* block elements take all the free space of row*/
+    font-size: 14px;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+}
+
+.form-control i{
+    visibility: hidden;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+
+.form-control small{
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+button{
+    background-color: #97a6ef;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    font-family: inherit; /* Same font-type as parent has*/
+    font-size: 16px;
+    display: block;
+    cursor: pointer;
+}

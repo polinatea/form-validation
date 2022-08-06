@@ -16,7 +16,7 @@ body{
 
 .container{
     /* background-color: white; */
-    border: 2px solid black;
+    /* border: 2px solid black; */
     border-radius: 5px;
     width: 400px;
     max-width: 100%;
@@ -69,6 +69,29 @@ body{
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+.form-control.success input{
+    border-color:rgb(12, 189, 136);
+}
+
+.form-control.error input{
+    border-color:crimson;
+}
+
+.form-control.success i.fa-check{
+    visibility: visible;
+    color:rgb(12, 189, 136);
+}
+
+.form-control.error i.fa-exclamation{
+    visibility: visible;
+    color:crimson;
+}
+
+.form-control.error small{
+    visibility: visible;
+    color: crimson;
 }
 
 button{

@@ -94,6 +94,11 @@ body{
     color: crimson;
 }
 
+.form-control:nth-child(2) > i{
+    top: 40px;
+    right: 40px;
+}
+
 button{
     background-color: #97a6ef;
     width: 100%;

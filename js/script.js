@@ -12,10 +12,10 @@ form.addEventListener('submit', (e)=>{
 
 function checkInputs(){
     const usernameValue = username.value.trim() ; // trim() erase whitespace
-    // const dateValue = date.value.trim();
-    // const emailValue = email.value.trim();
-    // const passwordValue = password.value.trim();
-    // const password_checkValue = password_check.value.trim();
+    const dateValue = date.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+    const password_checkValue = password_check.value.trim();
 
 
     if (usernameValue===''){
@@ -24,8 +24,42 @@ function checkInputs(){
     else{
         setSuccessFor(username);
     }
+    if (dateValue===''){
+        setErrorFor(date,'Date of birth cannot be blank');
+    }
+    else{
+        setSuccessFor(date);
+    }
+
+    if (emailValue===''){
+        setErrorFor(email,'Email cannot be blank');
+    }
+    else if(!emailValue.match(/^[A-z0-9\-_]{1,}@[A-z0-9\-_]{1,}\.[A-z0-9\-_]{1,}$/)){
+        setErrorFor(email, 'Email format is not correct')
+    }
+    else{
+        setSuccessFor(email);
+    }
+
+    if (passwordValue===''){
+        setErrorFor(password,'Password cannot be blank');
+    }
+    else{
+        setSuccessFor(password);
+    }
+    if (password_checkValue===''){
+        setErrorFor(password_check,'Please, confirm password');
+    }
+    else if(passwordValue!=password_checkValue){
+        setErrorFor(password_check, 'Passwords don\'t match')
+    }
+    else{
+        setSuccessFor(password_check);
+    }
 
 }
+
+
 function setErrorFor(input, message){
         const formControl = input.parentElement; // .form-control
         const small = formControl.querySelector('small');
@@ -40,8 +74,6 @@ function setErrorFor(input, message){
 
 function setSuccessFor(input){
     const formControl = input.parentElement; // .form-control
-
-
 
     // formControl.className += " error"
     formControl.className = 'form-control success'

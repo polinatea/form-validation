@@ -44,9 +44,16 @@ function checkInputs(){
     if (passwordValue===''){
         setErrorFor(password,'Password cannot be blank');
     }
+
+    else if(!isStrong(passwordValue)){
+        setErrorFor(password, 'Password is not strong')
+
+    }
     else{
         setSuccessFor(password);
     }
+
+
     if (password_checkValue===''){
         setErrorFor(password_check,'Please, confirm password');
     }
@@ -58,7 +65,21 @@ function checkInputs(){
     }
 
 }
+function isStrong(pass){
+    var isStrong = false;
 
+    if(pass.length >5 && 
+        pass.match(/[A-Z]{1,}/) &&
+        pass.match(/[a-z]{1,}/) &&
+        pass.match(/[0-9]{1,}/) &&
+        pass.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{1,}/))
+    {
+        isStrong=true;
+        return isStrong;
+    }
+
+    
+}
 
 function setErrorFor(input, message){
         const formControl = input.parentElement; // .form-control

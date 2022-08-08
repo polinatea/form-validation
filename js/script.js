@@ -10,6 +10,9 @@ form.addEventListener('submit', (e)=>{
     checkInputs();
 });
 
+
+
+
 function checkInputs(){
     const usernameValue = username.value.trim() ; // trim() erase whitespace
     const dateValue = date.value.trim();
